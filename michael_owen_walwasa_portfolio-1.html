@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The professional portfolio of Michael Owen Walwasa, a Computer Science student.">
+  <meta name="author" content="Michael Owen Walwasa">
+  <meta name="robots" content="index, follow">
+  <title>Michael Owen Walwasa | Professional Portfolio</title>
+  <style>
+    :root {
+      --navy: #10233f;
+      --blue: #2459d3;
+      --sky: #eaf1ff;
+      --ink: #17243a;
+      --muted: #627087;
+      --paper: #ffffff;
+      --wash: #f4f7fc;
+      --line: #dce4f0;
+      --accent: #e6b85c;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--wash);
+      line-height: 1.65;
+    }
+    a { color: var(--blue); }
+    .topbar {
+      background: var(--navy);
+      color: white;
+      padding: 14px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .brand { font-weight: 800; letter-spacing: .3px; }
+    nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; font-size: .94rem; }
+    nav a:hover, nav a:focus { text-decoration: underline; }
+    .marquee-wrap {
+      overflow: hidden;
+      background: var(--blue);
+      color: white;
+      border-bottom: 4px solid var(--accent);
+    }
+    .marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee-scroll 24s linear infinite;
+      padding: 10px 0;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+    .marquee span { padding-right: 3rem; white-space: nowrap; }
+    .marquee-wrap:hover .marquee { animation-play-state: paused; }
+    @keyframes marquee-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .marquee { animation: none; width: auto; justify-content: center; flex-wrap: wrap; }
+      .marquee span:nth-child(2) { display: none; }
+    }
+    .hero {
+      background: linear-gradient(135deg, #10233f, #214c99);
+      color: white;
+      padding: 76px 5% 72px;
+    }
+    .hero-inner { max-width: 1080px; margin: auto; }
+    .eyebrow {
+      color: #d7e4ff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+    h1 { font-size: clamp(2.3rem, 6vw, 4.4rem); line-height: 1.08; margin: 12px 0 18px; }
+    .hero p { max-width: 680px; color: #e8efff; font-size: 1.12rem; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .button {
+      display: inline-block; padding: 11px 18px; border-radius: 8px;
+      background: white; color: var(--navy); text-decoration: none; font-weight: 700;
+      border: 1px solid white;
+    }
+    .button.secondary { color: white; background: transparent; }
+    main { max-width: 1080px; margin: auto; padding: 34px 5% 60px; }
+    section { scroll-margin-top: 20px; margin: 0 0 26px; }
+    .panel {
+      background: var(--paper); border: 1px solid var(--line); border-radius: 16px;
+      padding: clamp(20px, 4vw, 32px); box-shadow: 0 8px 26px rgba(16,35,63,.045);
+    }
+    h2 { margin: 0 0 12px; color: var(--navy); font-size: 1.65rem; }
+    h3 { color: var(--navy); margin: 0 0 8px; }
+    .intro { color: var(--muted); margin-top: 0; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .small-card { background: var(--sky); padding: 18px; border-radius: 12px; }
+    .small-card p { margin: 0; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; min-width: 420px; }
+    th, td { padding: 13px 14px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: var(--navy); color: white; }
+    tbody tr:nth-child(even) { background: #f5f8fe; }
+    .tag {
+      display: inline-block; padding: 4px 9px; border-radius: 999px;
+      background: #eaf1ff; color: #234aa0; font-size: .84rem; margin: 3px 4px 3px 0;
+    }
+    .project-placeholder { border: 1px dashed #9fb3d6; border-radius: 12px; padding: 18px; background: #fbfcff; }
+    .project-placeholder p { margin-bottom: 0; color: var(--muted); }
+    footer { background: var(--navy); color: #e6edfb; padding: 26px 5%; text-align: center; }
+    footer p { margin: 5px 0; }
+    .note { font-size: .92rem; color: var(--muted); }
+    @media (max-width: 650px) {
+      .topbar { align-items: flex-start; }
+      nav { gap: 12px; }
+      .hero { padding-top: 54px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">MOW · Portfolio</div>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#profile">Profile table</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
+
+  <div class="marquee-wrap" aria-label="Moving welcome banner">
+    <div class="marquee">
+      <span>WELCOME TO THE OFFICIAL PORTFOLIO OF MICHAEL OWEN WALWASA · COMPUTER SCIENCE STUDENT · LEARNING, BUILDING, GROWING ·</span>
+      <span aria-hidden="true">WELCOME TO THE OFFICIAL PORTFOLIO OF MICHAEL OWEN WALWASA · COMPUTER SCIENCE STUDENT · LEARNING, BUILDING, GROWING ·</span>
+    </div>
+  </div>
+
+  <section class="hero" aria-labelledby="main-title">
+    <div class="hero-inner">
+      <div class="eyebrow">Personal · Professional · Learning journey</div>
+      <h1 id="main-title">Michael Owen<br>Walwasa</h1>
+      <p>Computer Science student building knowledge step by step and developing a foundation for a future in technology.</p>
+      <div class="actions">
+        <a class="button" href="#about">Discover my profile</a>
+        <a class="button secondary" href="#projects">View learning projects</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="about" class="panel">
+      <h2>About Me</h2>
+      <p>Welcome to my professional portfolio. My name is <strong>Michael Owen Walwasa</strong>, and I am a Computer Science student. This website is a starting point for sharing my education, the skills I develop, and projects I complete as I continue learning.</p>
+      <p>I will update this page as my experience and work grow. The goal is to keep a clear record of my learning journey and make my work easier to discover online.</p>
+    </section>
+
+    <section id="profile" class="panel">
+      <h2>Personal Profile</h2>
+      <p class="intro">A simple overview using information currently confirmed.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Category</th><th>Details</th></tr></thead>
+          <tbody>
+            <tr><td>Public name</td><td>Michael Owen Walwasa</td></tr>
+            <tr><td>Current role</td><td>Computer Science student</td></tr>
+            <tr><td>Website purpose</td><td>Professional profile and learning portfolio</td></tr>
+            <tr><td>Current stage</td><td>Beginner / developing skills</td></tr>
+            <tr><td>Interests to develop</td><td>Computer Science and technology (add specific interests as they are confirmed)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Only publish information you are comfortable making public. You can add more details later.</p>
+    </section>
+
+    <section id="education" class="panel">
+      <h2>Education</h2>
+      <p class="intro">My academic background and current learning journey.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Level</th><th>School / institution</th><th>Details</th></tr></thead>
+          <tbody>
+            <tr><td>Secondary education (O-Level)</td><td>Kigulu College, Iganga</td><td>Achieved a Super First Grade.</td></tr>
+            <tr><td>Advanced secondary education (A-Level)</td><td>Kigulu College</td><td>Studied BCM: Biology, Chemistry and Mathematics.</td></tr>
+            <tr><td>Current studies</td><td>St Lawrence University</td><td>Bachelor of Science in Computer Science.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Dates and examination years can be added later if you want them displayed.</p>
+    </section>
+
+    <section id="skills" class="panel">
+      <h2>Learning & Skills</h2>
+      <p class="intro">This section is designed to grow with your studies. These are learning areas to explore, not claims of professional mastery.</p>
+      <div class="grid">
+        <div class="small-card">
+          <h3>Current focus</h3>
+          <p>Computer Science studies and building a foundation in technology.</p>
+        </div>
+        <div class="small-card">
+          <h3>Skills to document</h3>
+          <p>Add each skill after you have practised it and can describe what you have done.</p>
+        </div>
+      </div>
+      <div style="margin-top:16px" aria-label="Possible learning topics">
+        <span class="tag">Programming</span>
+        <span class="tag">Web development</span>
+        <span class="tag">Databases</span>
+        <span class="tag">Operating systems</span>
+        <span class="tag">Artificial intelligence</span>
+      </div>
+      <p class="note">The tags above are possible study topics, not a statement that you have mastered them.</p>
+    </section>
+
+    <section id="projects" class="panel">
+      <h2>Projects & Achievements</h2>
+      <p class="intro">Selected learning activities and practical work from my developing Computer Science journey.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Project / activity</th><th>Purpose and learning</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Personal portfolio website</td><td>Building a public professional profile with HTML, page sections, tables and a moving marquee banner.</td><td>Starter web project</td></tr>
+            <tr><td>Image selection tools practice</td><td>Practising image selection and editing workflows with a browser-based image editor such as Photopea.</td><td>Learning / practice</td></tr>
+            <tr><td>Operating system installation study</td><td>Learning the beginner steps involved in preparing for and installing an operating system.</td><td>Study activity</td></tr>
+            <tr><td>Database concepts coursework</td><td>Studying what databases are and how organisations use them to store, organise and retrieve information.</td><td>Academic learning</td></tr>
+            <tr><td>Voting system concept</td><td>Exploring how a voting system can be represented and explained with a simple diagram.</td><td>Concept study</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">These entries describe learning and practice activities, not paid work or professional project experience. Add links, screenshots or more detail as your work develops.</p>
+    </section>
+
+    <section class="panel" id="future">
+      <h2>My Next Steps</h2>
+      <div class="grid">
+        <div class="small-card"><h3>01 · Learn</h3><p>Continue studying and practising Computer Science fundamentals.</p></div>
+        <div class="small-card"><h3>02 · Build</h3><p>Create small projects and keep notes about what each project teaches me.</p></div>
+        <div class="small-card"><h3>03 · Improve</h3><p>Update this portfolio with verified skills and completed work.</p></div>
+        <div class="small-card"><h3>04 · Share</h3><p>Share the published website when it is ready for others to see.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Michael Owen Walwasa</strong></p>
+    <p>Computer Science Student · Personal Professional Portfolio</p>
+    <p class="note" style="color:#d4deef">A learning journey in progress.</p>
+  </footer>
+</body>
+</html>
